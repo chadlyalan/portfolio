@@ -4,6 +4,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/classes/styles.dart';
+import 'package:portfolio/screens/homepage.dart';
 import 'package:portfolio/widgets/secondaryButton.dart';
 
 class Landing extends ConsumerStatefulWidget {
@@ -24,6 +25,7 @@ class _LandingState extends ConsumerState<Landing> {
   Widget build(BuildContext context) {
     // we're setting some style up here using the theme so that when the
     // theme switches, so do our colors.
+    final scroller = ref.read(scrollControllerProvider);
 
     final colorTitle = TextStyle(
       fontSize: 46,
@@ -146,7 +148,8 @@ class _LandingState extends ConsumerState<Landing> {
                       padding: const EdgeInsets.only(left: 8.0, top: 12),
                       child: SecondaryButton(
                         text: 'Contact Me',
-                        callback: () => print('i got called back'),
+                        callback: () => scroller.scrollTo(
+                            index: 4, duration: Duration(milliseconds: 800)),
                       ))
                 ],
               ))),
