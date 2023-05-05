@@ -18,11 +18,14 @@ class _SidePanelState extends ConsumerState<SidePanel> {
     return Material(
         //color: Color(0xFF262626),
         child: SizedBox(
-      width: 269,
+      width: 125,
       child: Column(
         children: <Widget>[
           buildHeader(context),
+          Spacer(),
           buildMenu(context, scroller),
+          Spacer(),
+          buildSocials(context),
         ],
       ),
     ));
@@ -32,7 +35,7 @@ class _SidePanelState extends ConsumerState<SidePanel> {
         padding: EdgeInsets.all(24),
         child: Column(children: const [
           Text(
-            'Chad',
+            'Thom',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w500,
@@ -48,6 +51,12 @@ class _SidePanelState extends ConsumerState<SidePanel> {
           TextButton(
               onPressed: () {
                 controller.scrollTo(
+                    index: 1, duration: Duration(milliseconds: 800));
+              },
+              child: Text('Top')),
+          TextButton(
+              onPressed: () {
+                controller.scrollTo(
                     index: 2, duration: Duration(milliseconds: 800));
               },
               child: Text('Projects')),
@@ -60,9 +69,18 @@ class _SidePanelState extends ConsumerState<SidePanel> {
           TextButton(
               onPressed: () {
                 controller.scrollTo(
-                    index: 4, duration: Duration(milliseconds: 800));
+                    index: 4, duration: Duration(milliseconds: 1000));
               },
               child: Text('Contact Me')),
+        ],
+      ));
+
+  Widget buildSocials(BuildContext context) => Expanded(
+          child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Icons.inbox),
+          Icon(Icons.person),
         ],
       ));
 }

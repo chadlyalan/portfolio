@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/classes/styles.dart';
 import 'package:portfolio/screens/homepage.dart';
+import 'package:portfolio/widgets/custom_animated_text.dart';
 import 'package:portfolio/widgets/secondaryButton.dart';
 
 class Landing extends ConsumerStatefulWidget {
@@ -22,31 +23,30 @@ class _LandingState extends ConsumerState<Landing> {
   double opacity = 0;
 
   @override
-  Widget build(BuildContext context) {
-    // we're setting some style up here using the theme so that when the
-    // theme switches, so do our colors.
-    final scroller = ref.read(scrollControllerProvider);
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    startAnimations();
+  }
 
-    final colorTitle = TextStyle(
-      fontSize: 46,
-      fontWeight: FontWeight.w400,
-      color: Theme.of(context).colorScheme.secondary,
-    );
-    final plainTitle = TextStyle(
-      fontSize: 42,
-      fontWeight: FontWeight.w400,
-      color: Theme.of(context).colorScheme.primary,
-    );
-    final smallStyle = TextStyle(
-      fontSize: 24,
-      fontWeight: FontWeight.w200,
-      color: Theme.of(context).colorScheme.primary,
-    );
+  // I'm overriding the setState function itself here to make sure
+  // that i'm not calling setState if the widget itself isn't currently
+  // mounted. I was having issues with the timers attempting to set
+  // state while the landing widget wasn't mounted. (after dispose)
+  @override
+  void setState(fn) {
+    if (mounted) {
+      super.setState(fn);
+    }
+  }
+
+  startAnimations() {
     Timer(const Duration(milliseconds: 500), () {
       setState(() {
         showName = true;
       });
     });
+
     Timer(const Duration(milliseconds: 800), () {
       setState(() {
         showName2 = true;
@@ -63,12 +63,47 @@ class _LandingState extends ConsumerState<Landing> {
         opacity = 1;
       });
     });
+  }
+
+  double getTitleSize(width) {
+    return width / 12;
+  }
+
+  double getSmallSize(width) {
+    return width / 22;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // we're setting some style up here using the theme so that when the
+    // theme switches, so do our colors.
+    final scroller = ref.read(scrollControllerProvider);
+    final width = MediaQuery.of(context).size.width;
+    print(width);
+
+    final colorTitle = TextStyle(
+      fontSize: getTitleSize(width),
+      fontWeight: FontWeight.w400,
+      color: Theme.of(context).colorScheme.secondary,
+    );
+    final plainTitle = TextStyle(
+      fontSize: getTitleSize(width),
+      fontWeight: FontWeight.w400,
+      color: Theme.of(context).colorScheme.primary,
+    );
+    final smallStyle = TextStyle(
+      fontSize: getSmallSize(width),
+      fontWeight: FontWeight.w200,
+      color: Theme.of(context).colorScheme.primary,
+    );
+
     return SizedBox(
       height: MediaQuery.of(context).size.height,
       child: Align(
           alignment: Alignment.center,
           child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:
+                  const EdgeInsets.only(left: 8.0, bottom: 8.0, right: 8.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -105,7 +140,7 @@ class _LandingState extends ConsumerState<Landing> {
                               showName2
                                   ? AnimatedTextKit(
                                       animatedTexts: [
-                                        TypewriterAnimatedText("Chad,",
+                                        TypewriterAnimatedText("Thom",
                                             textStyle: colorTitle,
                                             speed: const Duration(
                                                 milliseconds: 100),
@@ -123,14 +158,9 @@ class _LandingState extends ConsumerState<Landing> {
                   showTitle
                       ? Padding(
                           padding: const EdgeInsets.only(left: 8.0),
-                          child: AnimatedTextKit(
-                            animatedTexts: [
-                              TypewriterAnimatedText("Software Engineer",
-                                  textStyle: plainTitle,
-                                  speed: const Duration(milliseconds: 100),
-                                  cursor: "|"),
-                            ],
-                            isRepeatingAnimation: false,
+                          child: CustomAnimatedText(
+                            text: 'Software Engineer',
+                            style: plainTitle,
                           ),
                         )
                       : SizedBox(
@@ -149,8 +179,11 @@ class _LandingState extends ConsumerState<Landing> {
                       child: SecondaryButton(
                         text: 'Contact Me',
                         callback: () => scroller.scrollTo(
-                            index: 4, duration: Duration(milliseconds: 800)),
-                      ))
+                            index: 4, duration: Duration(milliseconds: 1000)),
+                      )),
+                  SizedBox(
+                    height: 200,
+                  )
                 ],
               ))),
     );
