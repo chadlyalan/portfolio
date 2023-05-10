@@ -35,7 +35,7 @@ class _SidePanelState extends ConsumerState<SidePanel> {
         padding: EdgeInsets.all(24),
         child: Column(children: const [
           Text(
-            'Thom',
+            'Chad',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w500,

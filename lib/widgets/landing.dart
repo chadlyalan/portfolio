@@ -8,6 +8,8 @@ import 'package:portfolio/screens/homepage.dart';
 import 'package:portfolio/widgets/custom_animated_text.dart';
 import 'package:portfolio/widgets/secondaryButton.dart';
 
+import '../classes/utils.dart';
+
 class Landing extends ConsumerStatefulWidget {
   const Landing({super.key});
 
@@ -65,14 +67,6 @@ class _LandingState extends ConsumerState<Landing> {
     });
   }
 
-  double getTitleSize(width) {
-    return width / 12;
-  }
-
-  double getSmallSize(width) {
-    return width / 22;
-  }
-
   @override
   Widget build(BuildContext context) {
     // we're setting some style up here using the theme so that when the
@@ -82,17 +76,17 @@ class _LandingState extends ConsumerState<Landing> {
     print(width);
 
     final colorTitle = TextStyle(
-      fontSize: getTitleSize(width),
+      fontSize: Utils().getTitleSize(width),
       fontWeight: FontWeight.w400,
       color: Theme.of(context).colorScheme.secondary,
     );
     final plainTitle = TextStyle(
-      fontSize: getTitleSize(width),
+      fontSize: Utils().getTitleSize(width),
       fontWeight: FontWeight.w400,
       color: Theme.of(context).colorScheme.primary,
     );
     final smallStyle = TextStyle(
-      fontSize: getSmallSize(width),
+      fontSize: Utils().getSmallSize(width),
       fontWeight: FontWeight.w200,
       color: Theme.of(context).colorScheme.primary,
     );
@@ -140,7 +134,7 @@ class _LandingState extends ConsumerState<Landing> {
                               showName2
                                   ? AnimatedTextKit(
                                       animatedTexts: [
-                                        TypewriterAnimatedText("Thom",
+                                        TypewriterAnimatedText("Chad",
                                             textStyle: colorTitle,
                                             speed: const Duration(
                                                 milliseconds: 100),

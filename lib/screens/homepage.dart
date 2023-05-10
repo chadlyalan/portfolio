@@ -32,28 +32,28 @@ class HomepageState extends ConsumerState<Homepage> {
           Expanded(
             child: ScrollablePositionedList.builder(
               itemCount: 5,
-              itemBuilder: (context, index) => buildSection(index),
+              itemBuilder: (context, index) {
+                if (index == 0) {
+                  return AppBar(
+                      elevation: 0,
+                      iconTheme: IconThemeData(
+                        color: Theme.of(context).colorScheme.secondary,
+                      ));
+                } else if (index == 1) {
+                  return Landing();
+                } else if (index == 2) {
+                  return Projects();
+                } else if (index == 3) {
+                  return About();
+                } else {
+                  return Contact();
+                }
+              },
               itemScrollController: itemController,
             ),
           ),
         ],
       ),
     );
-  }
-
-  Widget buildSection(int index) {
-    if (index == 0) {
-      return AppBar(
-        elevation: 0,
-      );
-    } else if (index == 1) {
-      return Landing();
-    } else if (index == 2) {
-      return Projects();
-    } else if (index == 3) {
-      return About();
-    } else {
-      return Contact();
-    }
   }
 }

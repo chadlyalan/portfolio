@@ -13,6 +13,9 @@ class SectionTitle extends ConsumerWidget {
       color: Theme.of(context).colorScheme.secondary,
     );
 
-    return Text(text, style: colorTitle);
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text(text, style: colorTitle),
+    );
   }
 }
