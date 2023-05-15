@@ -6,8 +6,8 @@ import 'package:video_player/video_player.dart';
 class ProjectCard extends ConsumerStatefulWidget {
   final String description;
   final String imageName;
-  bool? swap;
-  ProjectCard(
+  final bool? swap;
+  const ProjectCard(
       {super.key,
       required this.description,
       required this.imageName,
@@ -27,7 +27,6 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
     _controller = VideoPlayerController.asset('assets/rock_canyon_demo.mkv');
     _initializeVideoPlayerFuture = _controller.initialize();
 
-    widget.swap ??= false;
     super.initState();
   }
 
@@ -57,23 +56,7 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
               )
             : null,
         child: Row(children: [
-          widget.swap!
-              ? Expanded(
-                  child: SizedBox(
-                      width: width * .6,
-                      child:
-                          Image.asset(widget.imageName, fit: BoxFit.fitHeight)),
-                )
-              : SizedBox(
-                  width: width * .4,
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
-                    child: Text(
-                      widget.description,
-                      softWrap: true,
-                    ),
-                  )),
-          widget.swap!
+          widget.swap == null
               ? SizedBox(
                   width: width * .4,
                   child: Padding(
@@ -88,7 +71,23 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
                       width: width * .6,
                       child:
                           Image.asset(widget.imageName, fit: BoxFit.fitHeight)),
+                ),
+          widget.swap == null
+              ? Expanded(
+                  child: SizedBox(
+                      width: width * .6,
+                      child:
+                          Image.asset(widget.imageName, fit: BoxFit.fitHeight)),
                 )
+              : SizedBox(
+                  width: width * .4,
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 8.0),
+                    child: Text(
+                      widget.description,
+                      softWrap: true,
+                    ),
+                  ))
         ]),
       ),
     );

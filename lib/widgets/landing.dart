@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:portfolio/classes/styles.dart';
 import 'package:portfolio/screens/homepage.dart';
 import 'package:portfolio/widgets/custom_animated_text.dart';
 import 'package:portfolio/widgets/secondaryButton.dart';
@@ -73,7 +72,6 @@ class _LandingState extends ConsumerState<Landing> {
     // theme switches, so do our colors.
     final scroller = ref.read(scrollControllerProvider);
     final width = MediaQuery.of(context).size.width;
-    print(width);
 
     final colorTitle = TextStyle(
       fontSize: Utils().getTitleSize(width),

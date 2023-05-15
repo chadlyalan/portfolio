@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class CustomAnimatedText extends ConsumerWidget {
-  String text;
-  TextStyle style;
-  CustomAnimatedText({super.key, required this.text, required this.style});
+  final String text;
+  final TextStyle style;
+  const CustomAnimatedText(
+      {super.key, required this.text, required this.style});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

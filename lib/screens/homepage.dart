@@ -5,7 +5,6 @@ import 'package:portfolio/widgets/contact.dart';
 import 'package:portfolio/widgets/landing.dart';
 import 'package:portfolio/widgets/projects.dart';
 import 'package:portfolio/widgets/side_panel.dart';
-import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 final scrollControllerProvider =

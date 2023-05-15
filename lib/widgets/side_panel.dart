@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/screens/homepage.dart';
-import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class SidePanel extends ConsumerStatefulWidget {
@@ -22,18 +21,18 @@ class _SidePanelState extends ConsumerState<SidePanel> {
       child: Column(
         children: <Widget>[
           buildHeader(context),
-          Spacer(),
+          const Spacer(),
           buildMenu(context, scroller),
-          Spacer(),
+          const Spacer(),
           buildSocials(context),
         ],
       ),
     ));
   }
 
-  Widget buildHeader(BuildContext context) => Padding(
+  Widget buildHeader(BuildContext context) => const Padding(
         padding: EdgeInsets.all(24),
-        child: Column(children: const [
+        child: Column(children: [
           Text(
             'Chad',
             style: TextStyle(
@@ -51,31 +50,31 @@ class _SidePanelState extends ConsumerState<SidePanel> {
           TextButton(
               onPressed: () {
                 controller.scrollTo(
-                    index: 1, duration: Duration(milliseconds: 800));
+                    index: 1, duration: const Duration(milliseconds: 800));
               },
-              child: Text('Top')),
+              child: const Text('Top')),
           TextButton(
               onPressed: () {
                 controller.scrollTo(
-                    index: 2, duration: Duration(milliseconds: 800));
+                    index: 2, duration: const Duration(milliseconds: 800));
               },
-              child: Text('Projects')),
+              child: const Text('Projects')),
           TextButton(
               onPressed: () {
                 controller.scrollTo(
-                    index: 3, duration: Duration(milliseconds: 800));
+                    index: 3, duration: const Duration(milliseconds: 800));
               },
-              child: Text('About Me')),
+              child: const Text('About Me')),
           TextButton(
               onPressed: () {
                 controller.scrollTo(
-                    index: 4, duration: Duration(milliseconds: 1000));
+                    index: 4, duration: const Duration(milliseconds: 1000));
               },
-              child: Text('Contact Me')),
+              child: const Text('Contact Me')),
         ],
       ));
 
-  Widget buildSocials(BuildContext context) => Expanded(
+  Widget buildSocials(BuildContext context) => const Expanded(
           child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

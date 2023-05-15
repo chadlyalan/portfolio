@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class SectionTitle extends ConsumerWidget {
-  String text;
-  SectionTitle({super.key, required this.text});
+  final String text;
+  const SectionTitle({super.key, required this.text});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
