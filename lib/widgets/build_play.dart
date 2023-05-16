@@ -13,7 +13,6 @@ class BuildPlay extends ConsumerWidget {
         : Container(
             alignment: Alignment.center,
             color: Colors.black26,
-            child: Icon(Icons.play_arrow, color: Colors.white, size: 80));
-    ;
+            child: const Icon(Icons.play_arrow, color: Colors.white, size: 80));
   }
 }
