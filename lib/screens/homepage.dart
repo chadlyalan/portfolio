@@ -30,6 +30,7 @@ class HomepageState extends ConsumerState<Homepage> {
           (width > 960) ? const SidePanel() : Container(),
           Expanded(
             child: ScrollablePositionedList.builder(
+              addAutomaticKeepAlives: true,
               itemCount: 5,
               itemBuilder: (context, index) {
                 if (index == 0) {
@@ -39,13 +40,13 @@ class HomepageState extends ConsumerState<Homepage> {
                         color: Theme.of(context).colorScheme.secondary,
                       ));
                 } else if (index == 1) {
-                  return Landing();
+                  return const Landing();
                 } else if (index == 2) {
-                  return Projects();
+                  return const Projects();
                 } else if (index == 3) {
-                  return About();
+                  return const About();
                 } else {
-                  return Contact();
+                  return const Contact();
                 }
               },
               itemScrollController: itemController,
