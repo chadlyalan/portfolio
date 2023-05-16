@@ -27,26 +27,26 @@ class _ProjectsState extends ConsumerState<Projects> {
       child: (Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SectionTitle(text: 'Projects'),
+          const SectionTitle(text: 'Projects'),
           // portfolio description "paragraph" text
           Text(
             "we're going to put some description of the projects i've worked on here",
             style: smallStyle,
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+          const Padding(
+            padding: EdgeInsets.only(top: 8.0, bottom: 8),
             child: ProjectCard(
               description:
                   "a description of the project, lets make it long just so that we can test if this text will wrap and stuff like a good text should",
-              imageName: 'rock_canyon.png',
+              imageName: 'assets/rock_canyon.png',
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+          const Padding(
+            padding: EdgeInsets.only(top: 8.0, bottom: 8),
             child: ProjectCard(
               description:
                   "Flutter Web App that allows Rock Garden employees to update and delete Database records in realtime",
-              imageName: 'redpoint.png',
+              imageName: 'assets/redpoint.png',
               swap: true,
             ),
           ),
