@@ -55,6 +55,3 @@ class _ProjectsState extends ConsumerState<Projects> {
     );
   }
 }
-// we're going to build a list of cards that display projects
-    // when they hover they shine?
-    // clicking brings up a pop up window of a video displaying them?
