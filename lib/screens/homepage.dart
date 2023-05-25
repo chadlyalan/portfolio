@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:portfolio/widgets/about.dart';
-import 'package:portfolio/widgets/contact.dart';
-import 'package:portfolio/widgets/landing.dart';
-import 'package:portfolio/widgets/projects.dart';
+import 'package:portfolio/screens/about.dart';
+import 'package:portfolio/screens/contact.dart';
+import 'package:portfolio/screens/landing.dart';
+import 'package:portfolio/screens/projects.dart';
 import 'package:portfolio/widgets/side_panel.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 

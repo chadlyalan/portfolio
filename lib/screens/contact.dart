@@ -14,7 +14,8 @@ class _ContactState extends ConsumerState<Contact> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height,
-      child: (Column(
+      child: (const Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [SectionTitle(text: 'Contact Me')],
       )),
     );
