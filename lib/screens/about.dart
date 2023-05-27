@@ -11,37 +11,6 @@ class About extends ConsumerStatefulWidget {
 }
 
 class _AboutState extends ConsumerState<About> {
-  // Card buildCard(String title, String description, Color color) {
-  //   return Card(
-  //     clipBehavior: Clip.antiAlias,
-  //     shape: RoundedRectangleBorder(
-  //         side: BorderSide(color: color),
-  //         borderRadius: BorderRadius.circular(15)),
-  //     child: ListTile(
-  //       onTap: cardpopup(title, description, color),
-  //       hoverColor: color,
-  //       dense: true,
-  //       title: Padding(
-  //         padding: const EdgeInsets.only(top: 2.0, bottom: 2),
-  //         child: Text(
-  //           title,
-  //           overflow: TextOverflow.ellipsis,
-  //         ),
-  //       ),
-  //       subtitle: Padding(
-  //         padding: const EdgeInsets.only(top: 8.0, bottom: 8),
-  //         child: FractionallySizedBox(
-  //             heightFactor: .7,
-  //             child: Text(
-  //               description,
-  //               overflow: TextOverflow.ellipsis,
-  //               maxLines: 4,
-  //             )),
-  //       ),
-  //     ),
-  //   );
-  // }
-
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -51,7 +20,6 @@ class _AboutState extends ConsumerState<About> {
       mainAxisSize: MainAxisSize.min,
       children: [
         const SectionTitle(text: 'About Me'),
-        // here we have a basic ish description of my work history
         const Padding(
           padding: EdgeInsets.fromLTRB(12, 8, 12, 8),
           child: Text(
@@ -84,30 +52,35 @@ class _AboutState extends ConsumerState<About> {
               iconName: "konbon.svg",
             ),
             AboutCard(
-                title: 'Server Administration',
-                description:
-                    'While supporting server-side software and the corresponding clients, I learned to be proficient in Linux and Network troubleshooting. This has been incredibly useful when working with servers, and troubleshooting issues.',
-                color: Colors.yellowAccent),
+              title: 'Server Administration',
+              description:
+                  'While supporting server-side software and the corresponding clients, I learned to be proficient in Linux and Network troubleshooting. This has been incredibly useful when working with servers, and troubleshooting issues.',
+              color: Colors.yellowAccent,
+              iconName: "server-color.svg",
+            ),
             AboutCard(
-                title: 'Google Firebase',
-                description:
-                    'I have developed apps and websites that make use of the Firebase Realtime Database (a No SQL DB), Firestore, Cloud Storage, and Cloud Functions. The Cloud functions were written in Node.js.',
-                color: Colors.yellowAccent),
+              title: 'Google Firebase',
+              description:
+                  'I have developed apps and websites that make use of the Firebase Realtime Database (a No SQL DB), Firestore, Cloud Storage, and Cloud Functions. The Cloud functions were written in Node.js.',
+              color: Colors.yellowAccent,
+              iconName: "firebase-logo.svg",
+            ),
             AboutCard(
-                title: 'Swimming',
-                description:
-                    "I have been swimming competitvely since High School. It's something I continue to do and am quite passionate about. I was Swim Captain in High school, and while at BYU-Idaho I won a small scholarship for swimming.",
-                color: Colors.pinkAccent),
+              title: 'Swimming',
+              description:
+                  "I have been swimming competitvely since High School. It's something I continue to do and am quite passionate about. I was Swim Captain in High school, and while at BYU-Idaho I won a small scholarship for swimming.",
+              color: Colors.pinkAccent,
+              iconName: "swimming-color.svg",
+            ),
             AboutCard(
-                title: 'Rock Climbing',
-                description:
-                    "I've been rock climbing for a couple years now and I can't seem to get enough of it. If I'm not at work or at home, it's highly likely I'm at a climbing gym, or outside climbing on some rocks.",
-                color: Colors.pinkAccent),
+              title: 'Rock Climbing',
+              description:
+                  "I've been rock climbing for a couple years now and I can't seem to get enough of it. If I'm not at work or at home, it's highly likely I'm at a climbing gym, or outside climbing on some rocks.",
+              color: Colors.pinkAccent,
+              iconName: "climbing-color.svg",
+            ),
           ],
         ),
-
-        // next we have a grid of cards that will display specific talents
-        // and hobbies, that can be clicked on to show more detail.
       ],
     );
   }

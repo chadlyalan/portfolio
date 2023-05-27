@@ -66,6 +66,14 @@ flutter:
     - assets/rock_canyon_demo.mkv
     - assets/konbon.svg
     - assets/flutter.svg
+    - assets/server.svg
+    - assets/server-color.svg
+    - assets/firebase.svg
+    - assets/firebase-logo.svg
+    - assets/swimming.svg
+    - assets/swimming-color.svg
+    - assets/rock-climbing.svg
+    - assets/climbing-color.svg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see

@@ -60,7 +60,10 @@ class AboutCard extends ConsumerWidget {
                 fit: BoxFit.contain,
                 child: Center(
                     child: iconName != null
-                        ? SvgPicture.asset(iconName!, semanticsLabel: title)
+                        ? SvgPicture.asset(
+                            iconName!,
+                            semanticsLabel: title,
+                          )
                         : Icon(Icons.folder)),
               )),
         ),
