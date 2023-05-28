@@ -7,11 +7,13 @@ class ProjectCard extends ConsumerStatefulWidget {
   final String description;
   final String imageName;
   final bool? swap;
+  final String? uri;
   const ProjectCard(
       {super.key,
       required this.description,
       required this.imageName,
-      this.swap});
+      this.swap,
+      this.uri});
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => _ProjectCardState();
@@ -102,7 +104,7 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
               future: _initializeVideoPlayerFuture,
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.done) {
-                  return VideoPlayerWidget(controller: _controller);
+                  return VideoPlayerWidget(controller: _controller, uri: widget.uri,);
                 } else {
                   return const Center(
                     child: CircularProgressIndicator(),

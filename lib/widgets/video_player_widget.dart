@@ -7,14 +7,15 @@ import 'package:video_player/video_player.dart';
 
 class VideoPlayerWidget extends ConsumerWidget {
   final VideoPlayerController controller;
-  const VideoPlayerWidget({super.key, required this.controller});
+  final String? uri;
+  const VideoPlayerWidget({super.key, required this.controller, this.uri});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return controller.value.isInitialized
         ? Column(
           children: [
-           Padding(
+           uri != null ?Padding(
              padding: const EdgeInsets.only(bottom:8.0),
              child: SecondaryButton(text: "a link",
              callback: () async {
@@ -23,7 +24,7 @@ class VideoPlayerWidget extends ConsumerWidget {
              if (!await launchUrl(url)) {
                 throw Exception('could not luanch $url');
               } 
-            },)),
+            },)) : Container(),
             buildVideo(),
           ],
         )

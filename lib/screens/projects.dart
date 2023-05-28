@@ -38,6 +38,7 @@ class _ProjectsState extends ConsumerState<Projects> {
             description:
                 "a description of the project, lets make it long just so that we can test if this text will wrap and stuff like a good text should",
             imageName: 'assets/rock_canyon.png',
+            uri: "guides.rockgarden.io",
           ),
         ),
         const Padding(
