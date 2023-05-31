@@ -21,7 +21,6 @@ class _ProjectsState extends ConsumerState<Projects> {
       fontWeight: FontWeight.w200,
       color: Theme.of(context).colorScheme.primary,
     );
-
     return (Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
@@ -56,12 +55,11 @@ class _ProjectsState extends ConsumerState<Projects> {
           child: ProjectCard(
             description:
                 "hi this is a card for andrea and it is going to be super rad, that's it",
-            imageName: 'assets/rock_canyon.png',
-            
+            imageName: 'assets/rock_canyon.png',           
           ),
-          
         ),
       ],
     ));
+
   }
 }

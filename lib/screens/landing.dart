@@ -144,7 +144,9 @@ class _LandingState extends ConsumerState<Landing> {
                             ],
                           ),
                         )
+
                       : const SizedBox(
+
                           height: 56,
                         ),
                   showTitle
@@ -155,14 +157,18 @@ class _LandingState extends ConsumerState<Landing> {
                             style: plainTitle,
                           ),
                         )
+
                       : const SizedBox(
+
                           height: 56,
                         ),
                   Padding(
                       padding: const EdgeInsets.all(8),
                       child: AnimatedOpacity(
                         opacity: opacity,
+
                         duration: const Duration(seconds: 1),
+
                         child:
                             Text('Web & Mobile Developer', style: smallStyle),
                       )),
@@ -174,6 +180,7 @@ class _LandingState extends ConsumerState<Landing> {
                             index: 4, duration: const Duration(milliseconds: 1000)),
                       )),
                   const SizedBox(
+
                     height: 200,
                   )
                 ],
