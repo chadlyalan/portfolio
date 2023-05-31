@@ -24,7 +24,6 @@ class _LandingState extends ConsumerState<Landing> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     startAnimations();
   }
