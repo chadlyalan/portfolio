@@ -5,9 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/screens/homepage.dart';
 import 'package:portfolio/widgets/custom_animated_text.dart';
-import 'package:portfolio/widgets/secondaryButton.dart';
-
 import '../classes/utils.dart';
+import '../widgets/secondary_button.dart';
 
 class Landing extends ConsumerStatefulWidget {
   const Landing({super.key});
@@ -144,9 +143,7 @@ class _LandingState extends ConsumerState<Landing> {
                             ],
                           ),
                         )
-
                       : const SizedBox(
-
                           height: 56,
                         ),
                   showTitle
@@ -157,18 +154,14 @@ class _LandingState extends ConsumerState<Landing> {
                             style: plainTitle,
                           ),
                         )
-
                       : const SizedBox(
-
                           height: 56,
                         ),
                   Padding(
                       padding: const EdgeInsets.all(8),
                       child: AnimatedOpacity(
                         opacity: opacity,
-
                         duration: const Duration(seconds: 1),
-
                         child:
                             Text('Web & Mobile Developer', style: smallStyle),
                       )),
@@ -177,10 +170,10 @@ class _LandingState extends ConsumerState<Landing> {
                       child: SecondaryButton(
                         text: 'Contact Me',
                         callback: () => scroller.scrollTo(
-                            index: 4, duration: const Duration(milliseconds: 1000)),
+                            index: 4,
+                            duration: const Duration(milliseconds: 1000)),
                       )),
                   const SizedBox(
-
                     height: 200,
                   )
                 ],
