@@ -2,45 +2,34 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class AboutCard extends ConsumerWidget {
+class SocialCard extends ConsumerWidget {
   final String title;
-  final String description;
+  final String destination;
   final String? iconName;
   final Color color;
-  const AboutCard(
+  const SocialCard(
       {super.key,
       required this.title,
       required this.color,
-      required this.description,
+      required this.destination,
       this.iconName});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    cardpopup() {
-      showDialog(
-          context: context,
-          builder: (context) {
-            return FractionallySizedBox(
-              heightFactor: .75,
-              child: AlertDialog(
-                shape: RoundedRectangleBorder(
-                    side: BorderSide(color: color),
-                    borderRadius: BorderRadius.circular(15)),
-                title: Text(title),
-                content: Text(description),
-              ),
-            );
-          });
-    }
-
     return Card(
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(
           side: BorderSide(color: color),
           borderRadius: BorderRadius.circular(15)),
       child: ListTile(
-        onTap: cardpopup,
+        onTap: () async {
+          final Uri url = Uri.parse(destination);
+          if (!await launchUrl(url)) {
+            throw Exception('could not launch $url');
+          }
+        },
         hoverColor: color.withOpacity(.5),
         dense: true,
         title: Padding(

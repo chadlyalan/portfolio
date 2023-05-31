@@ -144,7 +144,7 @@ class _LandingState extends ConsumerState<Landing> {
                             ],
                           ),
                         )
-                      : SizedBox(
+                      : const SizedBox(
                           height: 56,
                         ),
                   showTitle
@@ -155,14 +155,14 @@ class _LandingState extends ConsumerState<Landing> {
                             style: plainTitle,
                           ),
                         )
-                      : SizedBox(
+                      : const SizedBox(
                           height: 56,
                         ),
                   Padding(
                       padding: const EdgeInsets.all(8),
                       child: AnimatedOpacity(
                         opacity: opacity,
-                        duration: Duration(seconds: 1),
+                        duration: const Duration(seconds: 1),
                         child:
                             Text('Web & Mobile Developer', style: smallStyle),
                       )),
@@ -171,9 +171,9 @@ class _LandingState extends ConsumerState<Landing> {
                       child: SecondaryButton(
                         text: 'Contact Me',
                         callback: () => scroller.scrollTo(
-                            index: 4, duration: Duration(milliseconds: 1000)),
+                            index: 4, duration: const Duration(milliseconds: 1000)),
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 200,
                   )
                 ],
