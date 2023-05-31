@@ -27,17 +27,18 @@ class Socials extends ConsumerWidget {
               iconName: "github-mark-white.svg",
             ),
             SocialCard(
-                title: "LinkedIn",
-                color: Colors.blueAccent,
-                destination:
-                    "https://www.linkedin.com/in/chad-thomas-162707119/")
-          ,SocialCard(
-              title: "E-Mail",
+              title: "LinkedIn",
+              color: Colors.blueAccent,
+              destination: "https://www.linkedin.com/in/chad-thomas-162707119/",
+              iconName: 'linkedin.svg',
+            ),
+            SocialCard(
+              title: "Gmail",
               color: Colors.redAccent,
-              destination: "mailto:chadat37@gmail.com?subject=An offer you can't refuse&body=New%20plugin",
+              destination:
+                  "mailto:chadat37@gmail.com?subject=An offer you can't refuse&body=",
               iconName: "gmail.svg",
             ),
-          
           ],
         )
       ],
