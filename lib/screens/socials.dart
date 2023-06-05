@@ -20,24 +20,44 @@ class Socials extends ConsumerWidget {
           physics: const NeverScrollableScrollPhysics(),
           crossAxisCount: 4,
           children: const [
-            SocialCard(
-              title: "GitHub",
-              color: Colors.grey,
-              destination: "https://github.com/chadlyalan",
-              iconName: "github-mark-white.svg",
+            Padding(
+              padding: EdgeInsets.all(6.0),
+              child: SocialCard(
+                title: "GitHub",
+                color: Colors.grey,
+                destination: "https://github.com/chadlyalan",
+                iconName: "github-mark-white.svg",
+              ),
             ),
-            SocialCard(
-              title: "LinkedIn",
-              color: Colors.blueAccent,
-              destination: "https://www.linkedin.com/in/chad-thomas-162707119/",
-              iconName: 'linkedin.svg',
+            Padding(
+              padding: EdgeInsets.all(6.0),
+              child: SocialCard(
+                title: "LinkedIn",
+                color: Colors.blueAccent,
+                destination: "https://www.linkedin.com/in/chad-thomas-162707119/",
+                iconName: 'linked-in-blue.png',
+                isSvg: false,
+              ),
             ),
-            SocialCard(
-              title: "Gmail",
-              color: Colors.redAccent,
-              destination:
-                  "mailto:chadat37@gmail.com?subject=An offer you can't refuse&body=",
-              iconName: "gmail.svg",
+            Padding(
+              padding: EdgeInsets.all(6.0),
+              child: SocialCard(
+                title: "Gmail",
+                color: Colors.redAccent,
+                destination:
+                    "mailto:chadat37@gmail.com?subject=An offer you can't refuse&body=",
+                iconName: "gmail.svg",
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(6.0),
+              child: SocialCard(
+                title: "Resume",
+                color: Colors.greenAccent,
+                destination:
+                    "file:assets/resume2023.pdf",
+                iconName: "resume1.svg",
+              ),
             ),
           ],
         )

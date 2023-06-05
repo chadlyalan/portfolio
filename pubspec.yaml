@@ -77,6 +77,8 @@ flutter:
     - assets/climbing-color.svg
     - assets/gmail.svg
     - assets/linkedin.svg
+    - assets/resume1.svg
+    - assets/resume2023.pdf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

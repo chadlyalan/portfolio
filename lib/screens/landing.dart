@@ -104,7 +104,7 @@ class _LandingState extends ConsumerState<Landing> {
                       padding: const EdgeInsets.only(left: 8.0),
                       child: AnimatedTextKit(
                         animatedTexts: [
-                          TypewriterAnimatedText('Hi',
+                          TypewriterAnimatedText('Hi,',
                               textStyle: plainTitle,
                               speed: const Duration(milliseconds: 100),
                               cursor: '|'),

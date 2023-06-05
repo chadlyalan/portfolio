@@ -9,11 +9,13 @@ class SocialCard extends ConsumerWidget {
   final String destination;
   final String? iconName;
   final Color color;
+  final bool isSvg;
   const SocialCard(
       {super.key,
       required this.title,
       required this.color,
       required this.destination,
+      this.isSvg = true,
       this.iconName});
 
   @override
@@ -49,10 +51,10 @@ class SocialCard extends ConsumerWidget {
                 fit: BoxFit.contain,
                 child: Center(
                     child: iconName != null
-                        ? SvgPicture.asset(
+                        ? isSvg ? SvgPicture.asset(
                             iconName!,
                             semanticsLabel: title,
-                          )
+                          ) : Image.asset(iconName!)
                         : const Icon(Icons.folder)),
               )),
         ),
