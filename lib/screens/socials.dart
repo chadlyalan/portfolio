@@ -55,8 +55,9 @@ class Socials extends ConsumerWidget {
                 title: "Resume",
                 color: Colors.greenAccent,
                 destination:
-                    "file:resume2023.pdf",
+                    "assets/resume2023.pdf",
                 iconName: "resume1.svg",
+                isPdf: true,
               ),
             ),
           ],

@@ -1,7 +1,10 @@
+import 'dart:html';
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pdfx/pdfx.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SocialCard extends ConsumerWidget {
@@ -20,8 +23,34 @@ class SocialCard extends ConsumerWidget {
       this.isPdf = false,
       this.iconName});
 
+
+  PdfDocument getDocument()  {
+    return PdfDocument.openAsset(destination);
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    late final PdfController pdfPinchController;
+    late PdfDocument document;
+    if (isPdf) {
+      document = getDocument();
+    }
+
+    if (isPdf) {
+      pdfPinchController =
+          PdfController(document: document);
+    }
+
+    showPdf(BuildContext context) {
+      showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              content: PdfView(controller: pdfPinchController),
+            );
+          });
+    }
+
     return Card(
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(
@@ -29,9 +58,13 @@ class SocialCard extends ConsumerWidget {
           borderRadius: BorderRadius.circular(15)),
       child: ListTile(
         onTap: () async {
-          final Uri url = Uri.parse(destination);
-          if (!await launchUrl(url)) {
-            throw Exception('could not launch $url');
+          if (isPdf) {
+            showPdf(context);
+          } else {
+            final Uri url = Uri.parse(destination);
+            if (!await launchUrl(url)) {
+              throw Exception('could not launch $url');
+            }
           }
         },
         hoverColor: color.withOpacity(.5),
@@ -53,10 +86,12 @@ class SocialCard extends ConsumerWidget {
                 fit: BoxFit.contain,
                 child: Center(
                     child: iconName != null
-                        ? isSvg ? SvgPicture.asset(
-                            iconName!,
-                            semanticsLabel: title,
-                          ) : Image.asset(iconName!)
+                        ? isSvg
+                            ? SvgPicture.asset(
+                                iconName!,
+                                semanticsLabel: title,
+                              )
+                            : Image.asset(iconName!)
                         : const Icon(Icons.folder)),
               )),
         ),
