@@ -10,12 +10,14 @@ class SocialCard extends ConsumerWidget {
   final String? iconName;
   final Color color;
   final bool isSvg;
+  final bool isPdf;
   const SocialCard(
       {super.key,
       required this.title,
       required this.color,
       required this.destination,
       this.isSvg = true,
+      this.isPdf = false,
       this.iconName});
 
   @override
