@@ -34,7 +34,8 @@ class Socials extends ConsumerWidget {
               child: SocialCard(
                 title: "LinkedIn",
                 color: Colors.blueAccent,
-                destination: "https://www.linkedin.com/in/chad-thomas-162707119/",
+                destination:
+                    "https://www.linkedin.com/in/chad-thomas-162707119/",
                 iconName: 'linked-in-blue.png',
                 isSvg: false,
               ),
@@ -49,17 +50,18 @@ class Socials extends ConsumerWidget {
                 iconName: "gmail.svg",
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(6.0),
-              child: SocialCard(
-                title: "Resume",
-                color: Colors.greenAccent,
-                destination:
-                    "assets/resume2023.pdf",
-                iconName: "resume1.svg",
-                isPdf: true,
-              ),
-            ),
+            // this is for the resume that we aren't going to use for now
+            // Padding(
+            //   padding: EdgeInsets.all(6.0),
+            //   child: SocialCard(
+            //     title: "Resume",
+            //     color: Colors.greenAccent,
+            //     destination:
+            //         "assets/resume2023.pdf",
+            //     iconName: "resume1.svg",
+            //     isPdf: true,
+            //   ),
+            // ),
           ],
         )
       ],
