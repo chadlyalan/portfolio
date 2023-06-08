@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:pdfx/pdfx.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SocialCard extends ConsumerWidget {
@@ -9,15 +10,44 @@ class SocialCard extends ConsumerWidget {
   final String destination;
   final String? iconName;
   final Color color;
+  final bool isSvg;
+  // final bool isPdf;
   const SocialCard(
       {super.key,
       required this.title,
       required this.color,
       required this.destination,
+      this.isSvg = true,
+      // this.isPdf = false,
       this.iconName});
+
+  // PdfDocument getDocument()  {
+  //   return PdfDocument.openAsset(destination);
+  // }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // late final PdfController pdfPinchController;
+    // late PdfDocument document;
+    // if (isPdf) {
+    //   document = getDocument();
+    // }
+
+    // if (isPdf) {
+    //   pdfPinchController =
+    //       PdfController(document: document);
+    // }
+
+    // showPdf(BuildContext context) {
+    //   showDialog(
+    //       context: context,
+    //       builder: (context) {
+    //         return AlertDialog(
+    //           content: PdfView(controller: pdfPinchController),
+    //         );
+    //       });
+    // }
+
     return Card(
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(
@@ -49,10 +79,12 @@ class SocialCard extends ConsumerWidget {
                 fit: BoxFit.contain,
                 child: Center(
                     child: iconName != null
-                        ? SvgPicture.asset(
-                            iconName!,
-                            semanticsLabel: title,
-                          )
+                        ? isSvg
+                            ? SvgPicture.asset(
+                                iconName!,
+                                semanticsLabel: title,
+                              )
+                            : Image.asset(iconName!)
                         : const Icon(Icons.folder)),
               )),
         ),

@@ -20,24 +20,48 @@ class Socials extends ConsumerWidget {
           physics: const NeverScrollableScrollPhysics(),
           crossAxisCount: 4,
           children: const [
-            SocialCard(
-              title: "GitHub",
-              color: Colors.grey,
-              destination: "https://github.com/chadlyalan",
-              iconName: "github-mark-white.svg",
+            Padding(
+              padding: EdgeInsets.all(6.0),
+              child: SocialCard(
+                title: "GitHub",
+                color: Colors.grey,
+                destination: "https://github.com/chadlyalan",
+                iconName: "github-mark-white.svg",
+              ),
             ),
-            SocialCard(
+            Padding(
+              padding: EdgeInsets.all(6.0),
+              child: SocialCard(
                 title: "LinkedIn",
                 color: Colors.blueAccent,
                 destination:
-                    "https://www.linkedin.com/in/chad-thomas-162707119/")
-          ,SocialCard(
-              title: "E-Mail",
-              color: Colors.redAccent,
-              destination: "mailto:chadat37@gmail.com?subject=An offer you can't refuse&body=New%20plugin",
-              iconName: "gmail.svg",
+                    "https://www.linkedin.com/in/chad-thomas-162707119/",
+                iconName: 'linked-in-blue.png',
+                isSvg: false,
+              ),
             ),
-          
+            Padding(
+              padding: EdgeInsets.all(6.0),
+              child: SocialCard(
+                title: "Gmail",
+                color: Colors.redAccent,
+                destination:
+                    "mailto:chadat37@gmail.com?subject=An offer you can't refuse&body=",
+                iconName: "gmail.svg",
+              ),
+            ),
+            // this is for the resume that we aren't going to use for now
+            // Padding(
+            //   padding: EdgeInsets.all(6.0),
+            //   child: SocialCard(
+            //     title: "Resume",
+            //     color: Colors.greenAccent,
+            //     destination:
+            //         "assets/resume2023.pdf",
+            //     iconName: "resume1.svg",
+            //     isPdf: true,
+            //   ),
+            // ),
           ],
         )
       ],

@@ -24,7 +24,6 @@ class _SidePanelState extends ConsumerState<SidePanel> {
           const Spacer(),
           buildMenu(context, scroller),
           const Spacer(),
-          buildSocials(context),
         ],
       ),
     ));
@@ -47,12 +46,12 @@ class _SidePanelState extends ConsumerState<SidePanel> {
       Expanded(
           child: Column(
         children: [
-          TextButton(
-              onPressed: () {
-                controller.scrollTo(
-                    index: 1, duration: const Duration(milliseconds: 800));
-              },
-              child: const Text('Top')),
+          // TextButton(
+          //     onPressed: () {
+          //       controller.scrollTo(
+          //           index: 1, duration: const Duration(milliseconds: 800));
+          //     },
+          //     child: const Text('Home')),
           TextButton(
               onPressed: () {
                 controller.scrollTo(
@@ -70,16 +69,7 @@ class _SidePanelState extends ConsumerState<SidePanel> {
                 controller.scrollTo(
                     index: 4, duration: const Duration(milliseconds: 1000));
               },
-              child: const Text('Contact Me')),
-        ],
-      ));
-
-  Widget buildSocials(BuildContext context) => const Expanded(
-          child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(Icons.inbox),
-          Icon(Icons.person),
+              child: const Text('Socials')),
         ],
       ));
 }
