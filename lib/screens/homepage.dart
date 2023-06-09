@@ -47,8 +47,10 @@ class HomepageState extends ConsumerState<Homepage> {
                   return const Projects();
                 } else if (index == 3) {
                   return const About();
-                } else {
+                } else if (index == 4) {
                   return const Socials();
+                } else {
+                  return Container();
                 }
               },
               itemScrollController: itemController,
