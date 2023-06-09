@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/widgets/video_player_widget.dart';
 import 'package:video_player/video_player.dart';
 
@@ -41,6 +42,7 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
 
     return InkWell(
       onTap: showMediaDialogue,
@@ -71,15 +73,25 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
               : Expanded(
                   child: SizedBox(
                       width: width * .6,
-                      child:
-                          Image.asset(widget.imageName, fit: BoxFit.fitHeight)),
+                      height: height * .3,
+                      child: widget.imageName.contains(".svg")
+                          ? SvgPicture.asset(
+                              widget.imageName,
+                            )
+                          : Image.asset(widget.imageName,
+                              fit: BoxFit.fitHeight)),
                 ),
           widget.swap == null
               ? Expanded(
                   child: SizedBox(
                       width: width * .6,
-                      child:
-                          Image.asset(widget.imageName, fit: BoxFit.fitHeight)),
+                      height: height * .3,
+                      child: widget.imageName.contains(".svg")
+                          ? SvgPicture.asset(
+                              widget.imageName,
+                            )
+                          : Image.asset(widget.imageName,
+                              fit: BoxFit.fitHeight)),
                 )
               : SizedBox(
                   width: width * .4,
@@ -104,7 +116,10 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
               future: _initializeVideoPlayerFuture,
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.done) {
-                  return VideoPlayerWidget(controller: _controller, uri: widget.uri,);
+                  return VideoPlayerWidget(
+                    controller: _controller,
+                    uri: widget.uri,
+                  );
                 } else {
                   return const Center(
                     child: CircularProgressIndicator(),

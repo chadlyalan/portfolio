@@ -45,21 +45,19 @@ class _ProjectsState extends ConsumerState<Projects> {
           child: ProjectCard(
             description:
                 "Flutter Web App that allows Rock Garden employees to update and delete Database records in realtime",
-            imageName: 'assets/redpoint.png',
+            imageName: 'rock-garden.svg',
             swap: true,
           ),
-          
         ),
         const Padding(
           padding: EdgeInsets.only(top: 8.0, bottom: 8),
           child: ProjectCard(
             description:
                 "hi this is a card for andrea and it is going to be super rad, that's it",
-            imageName: 'assets/rock_canyon.png',           
+            imageName: 'assets/rock_canyon.png',
           ),
         ),
       ],
     ));
-
   }
 }
