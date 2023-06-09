@@ -168,9 +168,9 @@ class _LandingState extends ConsumerState<Landing> {
                       padding: const EdgeInsets.only(left: 8.0, top: 12),
                       child: SecondaryButton(
                         text: 'Contact Me',
-                        callback: () => scroller.scrollTo(
-                            index: 4,
-                            duration: const Duration(milliseconds: 1000)),
+                        callback: () => scroller.jumpTo(
+                          index: 4,
+                        ),
                       )),
                   const SizedBox(
                     height: 200,

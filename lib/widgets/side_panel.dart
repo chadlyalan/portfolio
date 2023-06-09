@@ -54,20 +54,24 @@ class _SidePanelState extends ConsumerState<SidePanel> {
           //     child: const Text('Home')),
           TextButton(
               onPressed: () {
-                controller.scrollTo(
-                    index: 2, duration: const Duration(milliseconds: 800));
+                controller.jumpTo(
+                  index: 2,
+                );
               },
               child: const Text('Projects')),
           TextButton(
               onPressed: () {
-                controller.scrollTo(
-                    index: 3, duration: const Duration(milliseconds: 800));
+                controller.jumpTo(
+                  index: 3,
+                );
               },
               child: const Text('About Me')),
           TextButton(
               onPressed: () {
-                controller.scrollTo(
-                    index: 4, duration: const Duration(milliseconds: 1000));
+                controller.jumpTo(
+                  index: 4,
+                  alignment: 0,
+                );
               },
               child: const Text('Socials')),
         ],
