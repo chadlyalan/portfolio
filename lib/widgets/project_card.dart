@@ -75,11 +75,13 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
                       width: width * .6,
                       height: height * .3,
                       child: widget.imageName.contains(".svg")
-                          ? SvgPicture.asset(
-                              widget.imageName,
+                          ? Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: SvgPicture.asset(
+                                widget.imageName,
+                              ),
                             )
-                          : Image.asset(widget.imageName,
-                              fit: BoxFit.fitHeight)),
+                          : Image.asset(widget.imageName, fit: BoxFit.contain)),
                 ),
           widget.swap == null
               ? Expanded(
@@ -90,8 +92,7 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
                           ? SvgPicture.asset(
                               widget.imageName,
                             )
-                          : Image.asset(widget.imageName,
-                              fit: BoxFit.fitHeight)),
+                          : Image.asset(widget.imageName, fit: BoxFit.contain)),
                 )
               : SizedBox(
                   width: width * .4,

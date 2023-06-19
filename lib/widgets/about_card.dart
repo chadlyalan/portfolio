@@ -34,6 +34,8 @@ class AboutCard extends ConsumerWidget {
           });
     }
 
+    final width = MediaQuery.of(context).size.width;
+
     return Card(
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(
@@ -43,22 +45,25 @@ class AboutCard extends ConsumerWidget {
         onTap: cardpopup,
         hoverColor: color.withOpacity(.5),
         dense: true,
-        title: Padding(
-          padding: const EdgeInsets.only(top: 2.0, bottom: 2),
-          child: AutoSizeText(
-            title,
-            minFontSize: 24,
-            textAlign: TextAlign.center,
-            overflow: TextOverflow.ellipsis,
-          ),
-        ),
+        title: width >= 960
+            ? Padding(
+                padding: const EdgeInsets.only(top: 2.0, bottom: 2),
+                child: AutoSizeText(
+                  title,
+                  minFontSize: 24,
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              )
+            : null,
         subtitle: Padding(
           padding: const EdgeInsets.only(top: 8.0, bottom: 8),
           child: FractionallySizedBox(
               heightFactor: .7,
               child: FittedBox(
                 fit: BoxFit.contain,
-                child: Center(
+                child: Align(
+                    alignment: Alignment.center,
                     child: iconName != null
                         ? SvgPicture.asset(
                             iconName!,

@@ -14,6 +14,7 @@ class VideoPlayerWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return controller.value.isInitialized
         ? Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               uri != null
                   ? Padding(
@@ -37,7 +38,7 @@ class VideoPlayerWidget extends ConsumerWidget {
           );
   }
 
-  Widget buildVideo() => Expanded(
+  Widget buildVideo() => Flexible(
         child: Stack(
           children: [
             buildVideoPlayer(),
