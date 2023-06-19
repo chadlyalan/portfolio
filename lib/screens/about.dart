@@ -42,21 +42,21 @@ class _AboutState extends ConsumerState<About> {
               description:
                   "Flutter is my UI development kit of choice right now. I have experience building web and mobile apps with a single codebase.  I love to build dynamic and reactive UIs, and the past year of learning Flutter has been a blast!",
               color: Colors.blueAccent,
-              iconName: "flutter.svg",
+              iconName: "assets/flutter.svg",
             ),
             AboutCard(
               title: 'Project Management',
               description:
                   "As an Assistant Project Manager I had the incredible opportunity to learn from 3 Project Mangers in the BYU-Idaho IT Department. I learned what it takes to manage a team of developers and effectively communicate needs between the customer and dev team. I've found that as a developer this experience has been incredibly useful.",
               color: Colors.greenAccent,
-              iconName: "konbon.svg",
+              iconName: "assets/konbon.svg",
             ),
             AboutCard(
               title: 'Server Administration',
               description:
                   'While supporting server-side software and the corresponding clients, I learned to be proficient in Linux and Network troubleshooting. This has been incredibly useful when working with servers, and troubleshooting issues.',
               color: Colors.yellowAccent,
-              iconName: "server-color.svg",
+              iconName: "assets/server-color.svg",
             ),
             // TODO: this is triggering an image error for some reason
             // lets figure that crap out okay. issue: 28
@@ -72,14 +72,14 @@ class _AboutState extends ConsumerState<About> {
               description:
                   "I have been swimming competitvely since High School. It's something I continue to do and am quite passionate about. I was Swim Captain in High school, and while at BYU-Idaho I won a small scholarship for swimming.",
               color: Colors.pinkAccent,
-              iconName: "swimming-color.svg",
+              iconName: "assets/swimming-color.svg",
             ),
             AboutCard(
               title: 'Rock Climbing',
               description:
                   "I've been rock climbing for a couple years now and I can't seem to get enough of it. If I'm not at work or at home, it's highly likely I'm at a climbing gym, or outside climbing on some rocks.",
               color: Colors.pinkAccent,
-              iconName: "climbing-color.svg",
+              iconName: "assets/climbing-color.svg",
             ),
           ],
         ),

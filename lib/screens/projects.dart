@@ -26,7 +26,6 @@ class _ProjectsState extends ConsumerState<Projects> {
       mainAxisSize: MainAxisSize.min,
       children: [
         const SectionTitle(text: 'Projects'),
-        // portfolio description "paragraph" text
         Text(
           "we're going to put some description of the projects i've worked on here",
           style: smallStyle,
@@ -36,7 +35,7 @@ class _ProjectsState extends ConsumerState<Projects> {
           child: ProjectCard(
             description:
                 "A Flutter Web App that integrates with a Firebase back-end. It lazy loads images from Firebase, and uses pointer recognition to dynamically display different angles of the route to create a 3D effect. Go check it out.",
-            imageName: 'rg-wordmark.svg',
+            imageName: 'assets/rg-wordmark.svg',
             uri: "guides.rockgarden.io",
           ),
         ),
@@ -45,7 +44,7 @@ class _ProjectsState extends ConsumerState<Projects> {
           child: ProjectCard(
             description:
                 "Flutter Web App that allows Rock Garden employees to update and delete Database records in realtime",
-            imageName: 'rock-garden.svg',
+            imageName: 'assets/rock-garden.svg',
             swap: true,
           ),
         ),
@@ -54,7 +53,7 @@ class _ProjectsState extends ConsumerState<Projects> {
           child: ProjectCard(
             description:
                 "React.js weather app. It uses the openweather API to generate a 5 day weather forecast.",
-            imageName: 'react-icon.svg',
+            imageName: 'assets/react-icon.svg',
           ),
         ),
       ],

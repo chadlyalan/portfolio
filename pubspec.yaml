@@ -33,6 +33,7 @@ dependencies:
   auto_size_text: ^3.0.0
   cupertino_icons: ^1.0.2
   firebase_core: ^2.9.0
+  firebase_storage_web: ^3.6.3
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.3.2
@@ -77,12 +78,14 @@ flutter:
     - assets/rock-climbing.svg
     - assets/climbing-color.svg
     - assets/gmail.svg
-    - assets/linkedin.svg
+    - assets/github-mark-white.svg
+    - assets/linked-in-blue.png
     - assets/resume1.svg
     - assets/resume2023.pdf
     - assets/react-icon.svg
     - assets/reactjs-weather.mp4
     - assets/rg-wordmark.svg
+    - assets/rock-garden.svg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see

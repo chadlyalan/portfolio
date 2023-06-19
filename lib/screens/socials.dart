@@ -26,7 +26,7 @@ class Socials extends ConsumerWidget {
                 title: "GitHub",
                 color: Colors.grey,
                 destination: "https://github.com/chadlyalan",
-                iconName: "github-mark-white.svg",
+                iconName: "assets/github-mark-white.svg",
               ),
             ),
             Padding(
@@ -36,7 +36,7 @@ class Socials extends ConsumerWidget {
                 color: Colors.blueAccent,
                 destination:
                     "https://www.linkedin.com/in/chad-thomas-162707119/",
-                iconName: 'linked-in-blue.png',
+                iconName: 'assets/linked-in-blue.png',
                 isSvg: false,
               ),
             ),
@@ -47,7 +47,7 @@ class Socials extends ConsumerWidget {
                 color: Colors.redAccent,
                 destination:
                     "mailto:chadat37@gmail.com?subject=An offer you can't refuse&body=",
-                iconName: "gmail.svg",
+                iconName: "assets/gmail.svg",
               ),
             ),
             // this is for the resume that we aren't going to use for now
