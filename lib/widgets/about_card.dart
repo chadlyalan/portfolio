@@ -45,17 +45,17 @@ class AboutCard extends ConsumerWidget {
         onTap: cardpopup,
         hoverColor: color.withOpacity(.5),
         dense: true,
-        title: width >= 960
-            ? Padding(
+        title: 
+             Padding(
                 padding: const EdgeInsets.only(top: 2.0, bottom: 2),
                 child: AutoSizeText(
                   title,
-                  minFontSize: 24,
+                  minFontSize: width >= 675 ? 24 : 12,
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
                 ),
               )
-            : null,
+             ,
         subtitle: Padding(
           padding: const EdgeInsets.only(top: 8.0, bottom: 8),
           child: FractionallySizedBox(
