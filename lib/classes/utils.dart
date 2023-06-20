@@ -1,13 +1,13 @@
 class Utils {
-  double getTitleSize(width) {
+  double getTitleSize(double width) {
     return width / 12;
   }
 
-  double getSmallSize(width) {
+  double getSmallSize(double width) {
     return width / 22;
   }
 
-  double getSmallerSize(width) {
+  double getSmallerSize(double width) {
     return width / 32;
   }
 }

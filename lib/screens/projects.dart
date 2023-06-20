@@ -26,7 +26,6 @@ class _ProjectsState extends ConsumerState<Projects> {
       mainAxisSize: MainAxisSize.min,
       children: [
         const SectionTitle(text: 'Projects'),
-        // portfolio description "paragraph" text
         Text(
           "we're going to put some description of the projects i've worked on here",
           style: smallStyle,
@@ -35,8 +34,8 @@ class _ProjectsState extends ConsumerState<Projects> {
           padding: EdgeInsets.only(top: 8.0, bottom: 8),
           child: ProjectCard(
             description:
-                "a description of the project, lets make it long just so that we can test if this text will wrap and stuff like a good text should",
-            imageName: 'assets/rock_canyon.png',
+                "A Flutter Web App that integrates with a Firebase back-end. It lazy loads images from Firebase, and uses pointer recognition to dynamically display different angles of the route to create a 3D effect. Go check it out.",
+            imageName: 'assets/rg-wordmark.svg',
             uri: "guides.rockgarden.io",
           ),
         ),
@@ -45,7 +44,7 @@ class _ProjectsState extends ConsumerState<Projects> {
           child: ProjectCard(
             description:
                 "Flutter Web App that allows Rock Garden employees to update and delete Database records in realtime",
-            imageName: 'rock-garden.svg',
+            imageName: 'assets/rock-garden.svg',
             swap: true,
           ),
         ),
@@ -53,8 +52,8 @@ class _ProjectsState extends ConsumerState<Projects> {
           padding: EdgeInsets.only(top: 8.0, bottom: 8),
           child: ProjectCard(
             description:
-                "hi this is a card for andrea and it is going to be super rad, that's it",
-            imageName: 'assets/rock_canyon.png',
+                "React.js weather app. It uses the openweather API to generate a 5 day weather forecast.",
+            imageName: 'assets/react-icon.svg',
           ),
         ),
       ],

@@ -54,7 +54,6 @@ class _LandingState extends ConsumerState<Landing> {
     Timer(const Duration(milliseconds: 1400), () {
       setState(() {
         showTitle = true;
-        smallTitle = true;
       });
     });
     Timer(const Duration(seconds: 3), () {
@@ -113,38 +112,53 @@ class _LandingState extends ConsumerState<Landing> {
                       ),
                     ),
                   ),
-                  showName
-                      ? Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
-                          child: Row(
-                            children: [
-                              AnimatedTextKit(
-                                animatedTexts: [
-                                  TypewriterAnimatedText("I'm ",
-                                      textStyle: plainTitle,
-                                      speed: const Duration(milliseconds: 100),
-                                      cursor: ''),
-                                ],
-                                isRepeatingAnimation: false,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Row(
+                      children: [
+                        showName
+                            ? Flexible(
+                                child: AnimatedTextKit(
+                                  animatedTexts: [
+                                    TypewriterAnimatedText("I'm",
+                                        textStyle: plainTitle,
+                                        speed:
+                                            const Duration(milliseconds: 100),
+                                        cursor: " "),
+                                  ],
+                                  isRepeatingAnimation: false,
+                                ),
+                              )
+                            : Opacity(
+                                opacity: 0,
+                                child: Text(
+                                  "I'm",
+                                  style: plainTitle,
+                                ),
                               ),
-                              showName2
-                                  ? AnimatedTextKit(
-                                      animatedTexts: [
-                                        TypewriterAnimatedText("Chad",
-                                            textStyle: colorTitle,
-                                            speed: const Duration(
-                                                milliseconds: 100),
-                                            cursor: "|"),
-                                      ],
-                                      isRepeatingAnimation: false,
-                                    )
-                                  : Container(),
-                            ],
-                          ),
-                        )
-                      : const SizedBox(
-                          height: 56,
-                        ),
+                        showName2
+                            ? Flexible(
+                                child: AnimatedTextKit(
+                                  animatedTexts: [
+                                    TypewriterAnimatedText("Chad",
+                                        textStyle: colorTitle,
+                                        speed:
+                                            const Duration(milliseconds: 100),
+                                        cursor: "|"),
+                                  ],
+                                  isRepeatingAnimation: false,
+                                ),
+                              )
+                            : Opacity(
+                                opacity: 0,
+                                child: Text(
+                                  "Chad",
+                                  style: colorTitle,
+                                ),
+                              ),
+                      ],
+                    ),
+                  ),
                   showTitle
                       ? Padding(
                           padding: const EdgeInsets.only(left: 8.0),
@@ -153,9 +167,15 @@ class _LandingState extends ConsumerState<Landing> {
                             style: plainTitle,
                           ),
                         )
-                      : const SizedBox(
-                          height: 56,
-                        ),
+                      : Opacity(
+                          opacity: 0,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 8.0),
+                            child: Text(
+                              "Software Engineer",
+                              style: plainTitle,
+                            ),
+                          )),
                   Padding(
                       padding: const EdgeInsets.all(8),
                       child: AnimatedOpacity(
