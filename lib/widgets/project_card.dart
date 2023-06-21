@@ -9,12 +9,14 @@ class ProjectCard extends ConsumerStatefulWidget {
   final String imageName;
   final bool? swap;
   final String? uri;
+  final String? videoName;
   const ProjectCard(
       {super.key,
       required this.description,
       required this.imageName,
       this.swap,
-      this.uri});
+      this.uri,
+      this.videoName});
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => _ProjectCardState();
@@ -27,8 +29,10 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
 
   @override
   void initState() {
-    _controller = VideoPlayerController.asset('assets/rock_canyon_demo.mkv');
+    if (widget.videoName != null) {
+    _controller = VideoPlayerController.asset(widget.videoName!);
     _initializeVideoPlayerFuture = _controller.initialize();
+    }
 
     super.initState();
   }
