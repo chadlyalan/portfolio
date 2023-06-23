@@ -51,7 +51,8 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0, bottom: 8),
       child: InkWell(
-        onTap: widget.videoName != null ? showMediaDialogue : showNoVideoMessage,
+        onTap:
+            widget.videoName != null ? showMediaDialogue : showNoVideoMessage,
         onHover: (value) {
           setState(() {
             showHoverColor = value;

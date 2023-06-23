@@ -28,10 +28,13 @@ class _ProjectsState extends ConsumerState<Projects> {
         SectionTitle(text: 'Projects'),
         // there's an "uncaught" error in profile and release mode for some reason and it doesn't seem
         // to be effecting the website at all.. but it bugs me.. lol
-        Text(
-          "These are some of my more recent projects. I Love working with flutter, though I have dabbled with React.js and Python in the past.",
-          softWrap: true,
-          textAlign: TextAlign.justify,
+        Padding(
+          padding: EdgeInsets.fromLTRB(12, 8, 12, 8),
+          child: Text(
+            "These are some of my more recent projects. I Love working with flutter, though I have dabbled with React.js and Python in the past.",
+            softWrap: true,
+            textAlign: TextAlign.justify,
+          ),
         ),
         ProjectCard(
           description:
