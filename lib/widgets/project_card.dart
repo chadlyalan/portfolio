@@ -30,8 +30,8 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
   @override
   void initState() {
     if (widget.videoName != null) {
-    _controller = VideoPlayerController.asset(widget.videoName!);
-    _initializeVideoPlayerFuture = _controller.initialize();
+      _controller = VideoPlayerController.asset(widget.videoName!);
+      _initializeVideoPlayerFuture = _controller.initialize();
     }
 
     super.initState();
@@ -51,7 +51,7 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0, bottom: 8),
       child: InkWell(
-        onTap: showMediaDialogue,
+        onTap: widget.videoName != null ? showMediaDialogue : showNoVideoMessage,
         onHover: (value) {
           setState(() {
             showHoverColor = value;
@@ -61,8 +61,8 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
           padding: const EdgeInsets.all(8.0),
           decoration: showHoverColor
               ? BoxDecoration(
-                  border:
-                      Border.all(color: Theme.of(context).colorScheme.secondary),
+                  border: Border.all(
+                      color: Theme.of(context).colorScheme.secondary),
                 )
               : null,
           child: Row(children: [
@@ -87,7 +87,8 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
                                   widget.imageName,
                                 ),
                               )
-                            : Image.asset(widget.imageName, fit: BoxFit.contain)),
+                            : Image.asset(widget.imageName,
+                                fit: BoxFit.contain)),
                   ),
             widget.swap == null
                 ? Expanded(
@@ -98,7 +99,8 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
                             ? SvgPicture.asset(
                                 widget.imageName,
                               )
-                            : Image.asset(widget.imageName, fit: BoxFit.contain)),
+                            : Image.asset(widget.imageName,
+                                fit: BoxFit.contain)),
                   )
                 : SizedBox(
                     width: width * .4,
@@ -130,10 +132,22 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
                   );
                 } else {
                   return const Center(
-                    child: CircularProgressIndicator(),
+                    child: Text("sorry no video here"),
                   );
                 }
               },
+            ),
+          );
+        });
+  }
+
+  showNoVideoMessage() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return const AlertDialog(
+            content: Center(
+              child: Text('sorry no video demo yet'),
             ),
           );
         });
