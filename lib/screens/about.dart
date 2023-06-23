@@ -58,15 +58,13 @@ class _AboutState extends ConsumerState<About> {
               color: Colors.yellowAccent,
               iconName: "assets/server-color.svg",
             ),
-            // TODO: this is triggering an image error for some reason
-            // lets figure that crap out okay. issue: 28
-            // AboutCard(
-            //   title: 'Google Firebase',
-            //   description:
-            //       'I have developed apps and websites that make use of the Firebase Realtime Database (a No SQL DB), Firestore, Cloud Storage, and Cloud Functions. The Cloud functions were written in Node.js.',
-            //   color: Colors.yellowAccent,
-            //   iconName: "firebase-logo.svg",
-            // ),
+            AboutCard(
+              title: 'Google Firebase',
+              description:
+                  'I have developed apps and websites that make use of the Firebase Realtime Database (a No SQL DB), Firestore, Cloud Storage, and Cloud Functions. The Cloud functions were written in Node.js.',
+              color: Colors.yellowAccent,
+              iconName: "assets/firebase-logo.svg",
+            ),
             AboutCard(
               title: 'Swimming',
               description:

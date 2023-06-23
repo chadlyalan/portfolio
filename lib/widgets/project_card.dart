@@ -48,66 +48,69 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
 
-    return InkWell(
-      onTap: showMediaDialogue,
-      onHover: (value) {
-        setState(() {
-          showHoverColor = value;
-        });
-      },
-      child: Container(
-        padding: const EdgeInsets.all(8.0),
-        decoration: showHoverColor
-            ? BoxDecoration(
-                border:
-                    Border.all(color: Theme.of(context).colorScheme.secondary),
-              )
-            : null,
-        child: Row(children: [
-          widget.swap == null
-              ? SizedBox(
-                  width: width * .4,
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
-                    child: Text(
-                      widget.description,
-                      softWrap: true,
-                    ),
-                  ))
-              : Expanded(
-                  child: SizedBox(
-                      width: width * .6,
-                      height: height * .3,
-                      child: widget.imageName.contains(".svg")
-                          ? Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: SvgPicture.asset(
-                                widget.imageName,
-                              ),
-                            )
-                          : Image.asset(widget.imageName, fit: BoxFit.contain)),
-                ),
-          widget.swap == null
-              ? Expanded(
-                  child: SizedBox(
-                      width: width * .6,
-                      height: height * .3,
-                      child: widget.imageName.contains(".svg")
-                          ? SvgPicture.asset(
-                              widget.imageName,
-                            )
-                          : Image.asset(widget.imageName, fit: BoxFit.contain)),
+    return Padding(
+      padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+      child: InkWell(
+        onTap: showMediaDialogue,
+        onHover: (value) {
+          setState(() {
+            showHoverColor = value;
+          });
+        },
+        child: Container(
+          padding: const EdgeInsets.all(8.0),
+          decoration: showHoverColor
+              ? BoxDecoration(
+                  border:
+                      Border.all(color: Theme.of(context).colorScheme.secondary),
                 )
-              : SizedBox(
-                  width: width * .4,
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
-                    child: Text(
-                      widget.description,
-                      softWrap: true,
-                    ),
-                  ))
-        ]),
+              : null,
+          child: Row(children: [
+            widget.swap == null
+                ? SizedBox(
+                    width: width * .4,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: Text(
+                        widget.description,
+                        softWrap: true,
+                      ),
+                    ))
+                : Expanded(
+                    child: SizedBox(
+                        width: width * .6,
+                        height: height * .3,
+                        child: widget.imageName.contains(".svg")
+                            ? Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: SvgPicture.asset(
+                                  widget.imageName,
+                                ),
+                              )
+                            : Image.asset(widget.imageName, fit: BoxFit.contain)),
+                  ),
+            widget.swap == null
+                ? Expanded(
+                    child: SizedBox(
+                        width: width * .6,
+                        height: height * .3,
+                        child: widget.imageName.contains(".svg")
+                            ? SvgPicture.asset(
+                                widget.imageName,
+                              )
+                            : Image.asset(widget.imageName, fit: BoxFit.contain)),
+                  )
+                : SizedBox(
+                    width: width * .4,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: Text(
+                        widget.description,
+                        softWrap: true,
+                      ),
+                    ))
+          ]),
+        ),
       ),
     );
   }
