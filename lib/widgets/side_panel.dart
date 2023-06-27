@@ -15,18 +15,18 @@ class _SidePanelState extends ConsumerState<SidePanel> {
   Widget build(BuildContext context) {
     final scroller = ref.read(scrollControllerProvider);
     return Material(
-        //color: Color(0xFF262626),
+        color: Theme.of(context).colorScheme.background,
         child: SizedBox(
-      width: 125,
-      child: Column(
-        children: <Widget>[
-          buildHeader(context),
-          const Spacer(),
-          buildMenu(context, scroller),
-          const Spacer(),
-        ],
-      ),
-    ));
+          width: 125,
+          child: Column(
+            children: <Widget>[
+              buildHeader(context),
+              const Spacer(),
+              buildMenu(context, scroller),
+              const Spacer(),
+            ],
+          ),
+        ));
   }
 
   Widget buildHeader(BuildContext context) => const Padding(

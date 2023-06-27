@@ -47,7 +47,7 @@ class _AboutState extends ConsumerState<About> {
             AboutCard(
               title: "React.js",
               description:
-                  "After learning vanilla web development in college, discovering React.js was a breath of fresh air. I've built a Augmented Reality wrapper app (react app that integrated with a 3rd party AR solution) and a number of apps that make API calls to query data, and let the user sort/manipulate that data.",
+                  "After learning vanilla web development in college, discovering React.js was a breath of fresh air. I've built an Augmented Reality wrapper app (react app that integrated with a 3rd party AR solution) and a number of apps that make API calls to query data, and let the user sort/manipulate that data.",
               color: Colors.blueAccent,
               iconName: "assets/react-icon.svg",
             ),
