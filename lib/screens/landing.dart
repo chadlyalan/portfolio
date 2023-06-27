@@ -1,10 +1,12 @@
+// import 'dart:async';
 import 'dart:async';
 
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio/main.dart';
 import 'package:portfolio/screens/homepage.dart';
 import 'package:portfolio/widgets/custom_animated_text.dart';
+import 'package:portfolio/widgets/custom_opacity.dart';
 import '../classes/utils.dart';
 import '../widgets/secondary_button.dart';
 
@@ -16,16 +18,16 @@ class Landing extends ConsumerStatefulWidget {
 }
 
 class _LandingState extends ConsumerState<Landing> {
-  bool showName = false;
-  bool showName2 = false;
-  bool showTitle = false;
-  bool smallTitle = false;
+  bool showName = true;
+  bool showName2 = true;
+  bool showTitle = true;
+  bool smallTitle = true;
   double opacity = 0;
 
   @override
   void initState() {
     super.initState();
-    startAnimations();
+    // startAnimations();
   }
 
   // I'm overriding the setState function itself here to make sure
@@ -40,23 +42,23 @@ class _LandingState extends ConsumerState<Landing> {
   }
 
   startAnimations() {
-    Timer(const Duration(milliseconds: 500), () {
-      setState(() {
-        showName = true;
-      });
-    });
+    // Timer(const Duration(milliseconds: 500), () {
+    //   setState(() {
+    //     showName = true;
+    //   });
+    // });
 
-    Timer(const Duration(milliseconds: 800), () {
-      setState(() {
-        showName2 = true;
-      });
-    });
-    Timer(const Duration(milliseconds: 1400), () {
-      setState(() {
-        showTitle = true;
-      });
-    });
-    Timer(const Duration(seconds: 3), () {
+    // Timer(const Duration(milliseconds: 800), () {
+    //   setState(() {
+    //     showName2 = true;
+    //   });
+    // });
+    // Timer(const Duration(milliseconds: 1400), () {
+    //   setState(() {
+    //     showTitle = true;
+    //   });
+    // });
+    Timer(const Duration(seconds: 1), () {
       setState(() {
         opacity = 1;
       });
@@ -69,6 +71,7 @@ class _LandingState extends ConsumerState<Landing> {
     // theme switches, so do our colors.
     final scroller = ref.read(scrollControllerProvider);
     final width = MediaQuery.of(context).size.width;
+    final theme = ref.watch(themeModeProvider);
 
     final colorTitle = TextStyle(
       fontSize: Utils().getTitleSize(width),
@@ -101,14 +104,13 @@ class _LandingState extends ConsumerState<Landing> {
                     alignment: Alignment.centerLeft,
                     child: Padding(
                       padding: const EdgeInsets.only(left: 8.0),
-                      child: AnimatedTextKit(
-                        animatedTexts: [
-                          TypewriterAnimatedText('Hi,',
-                              textStyle: plainTitle,
-                              speed: const Duration(milliseconds: 100),
-                              cursor: '|'),
-                        ],
-                        isRepeatingAnimation: false,
+                      child: CustomAnimatedText(
+                        unique: ObjectKey({
+                          "value:": "Hi",
+                          "theme": theme == ThemeMode.dark ? "dark" : "light"
+                        }),
+                        text: 'Hi',
+                        style: plainTitle,
                       ),
                     ),
                   ),
@@ -116,73 +118,60 @@ class _LandingState extends ConsumerState<Landing> {
                     padding: const EdgeInsets.only(left: 8.0),
                     child: Row(
                       children: [
-                        showName
-                            ? Flexible(
-                                child: AnimatedTextKit(
-                                  animatedTexts: [
-                                    TypewriterAnimatedText("I'm",
-                                        textStyle: plainTitle,
-                                        speed:
-                                            const Duration(milliseconds: 100),
-                                        cursor: " "),
-                                  ],
-                                  isRepeatingAnimation: false,
-                                ),
-                              )
-                            : Opacity(
-                                opacity: 0,
-                                child: Text(
-                                  "I'm",
-                                  style: plainTitle,
-                                ),
-                              ),
-                        showName2
-                            ? Flexible(
-                                child: AnimatedTextKit(
-                                  animatedTexts: [
-                                    TypewriterAnimatedText("Chad",
-                                        textStyle: colorTitle,
-                                        speed:
-                                            const Duration(milliseconds: 100),
-                                        cursor: "|"),
-                                  ],
-                                  isRepeatingAnimation: false,
-                                ),
-                              )
-                            : Opacity(
-                                opacity: 0,
-                                child: Text(
-                                  "Chad",
-                                  style: colorTitle,
-                                ),
-                              ),
+                        Flexible(
+                          child: CustomAnimatedText(
+                            unique: ObjectKey({
+                              "value:": "I'm",
+                              "theme":
+                                  theme == ThemeMode.dark ? "dark" : "light"
+                            }),
+                            text: "I'm",
+                            style: plainTitle,
+                            cursor: " ",
+                            delay: 500,
+                          ),
+                        ),
+                        Flexible(
+                          child: CustomAnimatedText(
+                            unique: ObjectKey({
+                              "value:": "Chad",
+                              "theme":
+                                  theme == ThemeMode.dark ? "dark" : "light"
+                            }),
+                            text: 'Chad',
+                            style: colorTitle,
+                            delay: 800,
+                          ),
+                        )
                       ],
                     ),
                   ),
-                  showTitle
-                      ? Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
-                          child: CustomAnimatedText(
-                            text: 'Software Engineer',
-                            style: plainTitle,
-                          ),
-                        )
-                      : Opacity(
-                          opacity: 0,
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Text(
-                              "Software Engineer",
-                              style: plainTitle,
-                            ),
-                          )),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: CustomAnimatedText(
+                      unique: ObjectKey({
+                        "value:": "software engineer",
+                        "theme": theme == ThemeMode.dark ? "dark" : "light"
+                      }),
+                      text: 'Software Engineer',
+                      style: plainTitle,
+                      delay: 1400,
+                    ),
+                  ),
+                  // Padding(
+                  //     padding: const EdgeInsets.all(8),
+                  //     child: AnimatedOpacity(
+                  //       opacity: opacity,
+                  //       duration: const Duration(seconds: 1),
+                  //       child:
+                  //           Text('Web & Mobile Developer', style: smallStyle),
+                  //     )),
                   Padding(
                       padding: const EdgeInsets.all(8),
-                      child: AnimatedOpacity(
-                        opacity: opacity,
-                        duration: const Duration(seconds: 1),
-                        child:
-                            Text('Web & Mobile Developer', style: smallStyle),
+                      child: CustomOpacity(
+                        text: "Web & Mobile Developer",
+                        delay: 1200,
+                        style: smallStyle,
                       )),
                   Padding(
                       padding: const EdgeInsets.only(left: 8.0, top: 12),
