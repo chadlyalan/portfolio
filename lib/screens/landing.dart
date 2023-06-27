@@ -1,6 +1,3 @@
-// import 'dart:async';
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/main.dart';
@@ -10,63 +7,15 @@ import 'package:portfolio/widgets/custom_opacity.dart';
 import '../classes/utils.dart';
 import '../widgets/secondary_button.dart';
 
-class Landing extends ConsumerStatefulWidget {
+// we converted this landing widget into a stateless widget because
+// the animated text was freaking out when setState was called.
+// I extracted all of the setState functionality to their individual
+// widgets, and let landing page worry less about the
+class Landing extends ConsumerWidget {
   const Landing({super.key});
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _LandingState();
-}
-
-class _LandingState extends ConsumerState<Landing> {
-  bool showName = true;
-  bool showName2 = true;
-  bool showTitle = true;
-  bool smallTitle = true;
-  double opacity = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    // startAnimations();
-  }
-
-  // I'm overriding the setState function itself here to make sure
-  // that i'm not calling setState if the widget itself isn't currently
-  // mounted. I was having issues with the timers attempting to set
-  // state while the landing widget wasn't mounted. (after dispose)
-  @override
-  void setState(fn) {
-    if (mounted) {
-      super.setState(fn);
-    }
-  }
-
-  startAnimations() {
-    // Timer(const Duration(milliseconds: 500), () {
-    //   setState(() {
-    //     showName = true;
-    //   });
-    // });
-
-    // Timer(const Duration(milliseconds: 800), () {
-    //   setState(() {
-    //     showName2 = true;
-    //   });
-    // });
-    // Timer(const Duration(milliseconds: 1400), () {
-    //   setState(() {
-    //     showTitle = true;
-    //   });
-    // });
-    Timer(const Duration(seconds: 1), () {
-      setState(() {
-        opacity = 1;
-      });
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     // we're setting some style up here using the theme so that when the
     // theme switches, so do our colors.
     final scroller = ref.read(scrollControllerProvider);
@@ -158,14 +107,6 @@ class _LandingState extends ConsumerState<Landing> {
                       delay: 1400,
                     ),
                   ),
-                  // Padding(
-                  //     padding: const EdgeInsets.all(8),
-                  //     child: AnimatedOpacity(
-                  //       opacity: opacity,
-                  //       duration: const Duration(seconds: 1),
-                  //       child:
-                  //           Text('Web & Mobile Developer', style: smallStyle),
-                  //     )),
                   Padding(
                       padding: const EdgeInsets.all(8),
                       child: CustomOpacity(
