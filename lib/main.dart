@@ -6,6 +6,10 @@ import 'classes/my_theme.dart';
 import 'firebase_options.dart';
 import 'screens/loading.dart';
 
+final themeModeProvider = StateProvider<ThemeMode>((ref) {
+  return ThemeMode.dark;
+});
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -30,11 +34,13 @@ class MyApp extends ConsumerWidget {
     //  2. The result is a Future<Error>
     //  3. It's still loading
     final initialize = ref.watch(firebaseinitializeProvider);
+    final themeMode = ref.watch(themeModeProvider);
 
     return MaterialApp(
         navigatorKey: _navigatorKey,
-        themeMode: ThemeMode.dark,
+        themeMode: themeMode,
         darkTheme: MyTheme.darkTheme,
+        theme: MyTheme.lightTheme,
         debugShowCheckedModeBanner: false,
         //  We will use the initialize to check if the firebase has been initialized
         //  .when function can only be used with AsysncValue. If you hover over intialize

@@ -13,20 +13,22 @@ class SidePanel extends ConsumerStatefulWidget {
 class _SidePanelState extends ConsumerState<SidePanel> {
   @override
   Widget build(BuildContext context) {
+    // final theme= ref.read(themeModeProvider);
+
     final scroller = ref.read(scrollControllerProvider);
     return Material(
-        //color: Color(0xFF262626),
+        color: Theme.of(context).colorScheme.background,
         child: SizedBox(
-      width: 125,
-      child: Column(
-        children: <Widget>[
-          buildHeader(context),
-          const Spacer(),
-          buildMenu(context, scroller),
-          const Spacer(),
-        ],
-      ),
-    ));
+          width: 125,
+          child: Column(
+            children: <Widget>[
+              buildHeader(context),
+              const Spacer(),
+              buildMenu(context, scroller),
+              const Spacer(),
+            ],
+          ),
+        ));
   }
 
   Widget buildHeader(BuildContext context) => const Padding(
@@ -46,26 +48,28 @@ class _SidePanelState extends ConsumerState<SidePanel> {
       Expanded(
           child: Column(
         children: [
-          // TextButton(
-          //     onPressed: () {
-          //       controller.scrollTo(
-          //           index: 1, duration: const Duration(milliseconds: 800));
-          //     },
-          //     child: const Text('Home')),
           TextButton(
               onPressed: () {
                 controller.jumpTo(
                   index: 2,
                 );
               },
-              child: const Text('Projects')),
+              child: Text('Projects',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      color: Theme.of(context).colorScheme.secondary))),
           TextButton(
               onPressed: () {
                 controller.jumpTo(
                   index: 3,
                 );
               },
-              child: const Text('About Me')),
+              child: Text('About Me',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      color: Theme.of(context).colorScheme.secondary))),
           TextButton(
               onPressed: () {
                 controller.jumpTo(
@@ -73,7 +77,11 @@ class _SidePanelState extends ConsumerState<SidePanel> {
                   alignment: 0,
                 );
               },
-              child: const Text('Socials')),
+              child: Text('Socials',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      color: Theme.of(context).colorScheme.secondary))),
         ],
       ));
 }

@@ -7,6 +7,7 @@ import 'package:portfolio/screens/projects.dart';
 import 'package:portfolio/screens/socials.dart';
 
 import 'package:portfolio/widgets/side_panel.dart';
+import 'package:portfolio/widgets/theme_toggle.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 final scrollControllerProvider =
@@ -37,10 +38,12 @@ class HomepageState extends ConsumerState<Homepage> {
               itemBuilder: (context, index) {
                 if (index == 0) {
                   return AppBar(
-                      elevation: 0,
-                      iconTheme: IconThemeData(
-                        color: Theme.of(context).colorScheme.secondary,
-                      ));
+                    elevation: 0,
+                    iconTheme: IconThemeData(
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
+                    actions: const [ThemeToggle()],
+                  );
                 } else if (index == 1) {
                   return const Landing();
                 } else if (index == 2) {
