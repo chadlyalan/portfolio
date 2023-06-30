@@ -49,48 +49,41 @@ class Landing extends ConsumerWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
-                      child: CustomAnimatedText(
-                        unique: ObjectKey({
-                          "value:": "Hi",
-                          "theme": theme == ThemeMode.dark ? "dark" : "light"
-                        }),
-                        text: 'Hi',
-                        style: plainTitle,
-                      ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: CustomAnimatedText(
+                      unique: ObjectKey({
+                        "value:": "Hi",
+                        "theme": theme == ThemeMode.dark ? "dark" : "light"
+                      }),
+                      text: 'Hi',
+                      style: plainTitle,
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),
                     child: Row(
                       children: [
-                        Flexible(
-                          child: CustomAnimatedText(
-                            unique: ObjectKey({
-                              "value:": "I'm",
-                              "theme":
-                                  theme == ThemeMode.dark ? "dark" : "light"
-                            }),
-                            text: "I'm",
-                            style: plainTitle,
-                            cursor: " ",
-                            delay: 500,
-                          ),
+                        CustomAnimatedText(
+                          unique: ObjectKey({
+                            "value:": "I'm",
+                            "theme":
+                                theme == ThemeMode.dark ? "dark" : "light"
+                          }),
+                          text: "I'm",
+                          style: plainTitle,
+                          cursor: " ",
+                          delay: 500,
                         ),
-                        Flexible(
-                          child: CustomAnimatedText(
-                            unique: ObjectKey({
-                              "value:": "Chad",
-                              "theme":
-                                  theme == ThemeMode.dark ? "dark" : "light"
-                            }),
-                            text: 'Chad',
-                            style: colorTitle,
-                            delay: 800,
-                          ),
+                        CustomAnimatedText(
+                          unique: ObjectKey({
+                            "value:": "Chad",
+                            "theme":
+                                theme == ThemeMode.dark ? "dark" : "light"
+                          }),
+                          text: 'Chad',
+                          style: colorTitle,
+                          delay: 800,
                         )
                       ],
                     ),

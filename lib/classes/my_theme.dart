@@ -14,6 +14,7 @@ class MyTheme {
           // in order to make the app bar and scaffold match, this
           // surface is totally transparent.
           surface: const Color.fromARGB(0, 0, 0, 0)),
+          //useMaterial3: true,
       primaryColor: Colors.black,
       iconTheme: const IconThemeData(color: Colors.white));
 
@@ -25,13 +26,18 @@ class MyTheme {
           secondary: Color.fromARGB(255, 226, 124, 96),
           // onSecondary: Colors.green,
           background: Color.fromARGB(255, 133, 220, 187),
-          surface: Color.fromARGB(0, 0, 0, 0)),
-      useMaterial3: true,
-      primaryColor: Colors.red,
+          //surface:  Color.fromARGB(255, 65, 179, 164)
+          ),
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Color.fromARGB(255, 65, 179, 164)
+          ),
+      // useMaterial3: true,
+      primaryColor: Colors.black,
       textTheme: const TextTheme(
           bodyMedium: TextStyle(color: Colors.white),
           bodyLarge: TextStyle(color: Colors.white),
-          headlineSmall: TextStyle(color: Colors.white)));
+          headlineSmall: TextStyle(color: Colors.white))
+          );
 }
 
 // light orange   Color.fromARGB(255, 232, 167, 124)
