@@ -20,7 +20,7 @@ class MyTheme {
 
   static final lightTheme = ThemeData(
       scaffoldBackgroundColor: const Color.fromARGB(255, 93, 203, 172),
-      cardColor: Color.fromARGB(255, 232, 167, 124),
+      cardColor: const Color.fromARGB(255, 232, 167, 124),
       colorScheme: const ColorScheme.light(
         primary: Colors.white,
         secondary: Color.fromARGB(255, 197, 125, 146),
