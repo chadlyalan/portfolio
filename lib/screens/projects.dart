@@ -48,6 +48,7 @@ class _ProjectsState extends ConsumerState<Projects> {
               "Flutter Web App that allows Rock Garden employees to update and delete Database records in realtime",
           imageName: 'assets/rock-garden.svg',
           swap: true,
+          videoName: "assets/redpoint-demo.mp4",
         ),
         ProjectCard(
           description:
