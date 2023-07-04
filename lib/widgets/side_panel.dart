@@ -54,22 +54,25 @@ class _SidePanelState extends ConsumerState<SidePanel> {
                   index: 2,
                 );
               },
-              child: Text('Projects',
+              child: const Text('Projects',
                   style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Theme.of(context).colorScheme.secondary))),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    // color: Theme.of(context).colorScheme.secondary
+                  ))),
+
           TextButton(
               onPressed: () {
                 controller.jumpTo(
                   index: 3,
                 );
               },
-              child: Text('About Me',
+              child: const Text('About Me',
                   style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Theme.of(context).colorScheme.secondary))),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    // color: Theme.of(context).colorScheme.secondary
+                  ))),
           TextButton(
               onPressed: () {
                 controller.jumpTo(
@@ -77,11 +80,13 @@ class _SidePanelState extends ConsumerState<SidePanel> {
                   alignment: 0,
                 );
               },
-              child: Text('Socials',
+              child: const Text('Socials',
                   style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Theme.of(context).colorScheme.secondary))),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    // color: Theme.of(context).colorScheme.secondary
+                  ))),
+
         ],
       ));
 }

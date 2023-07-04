@@ -18,16 +18,20 @@ class MyTheme {
       iconTheme: const IconThemeData(color: Colors.white));
 
   static final lightTheme = ThemeData(
-      scaffoldBackgroundColor: const Color.fromARGB(255, 65, 179, 164),
+      scaffoldBackgroundColor: const Color.fromARGB(255, 93, 203, 172),
       cardColor: const Color.fromARGB(255, 232, 167, 124),
       colorScheme: const ColorScheme.light(
-          primary: Colors.white,
-          secondary: Color.fromARGB(255, 226, 124, 96),
-          // onSecondary: Colors.green,
-          background: Color.fromARGB(255, 133, 220, 187),
-          surface: Color.fromARGB(0, 0, 0, 0)),
-      useMaterial3: true,
-      primaryColor: Colors.red,
+        primary: Colors.white,
+        secondary: Color.fromARGB(255, 197, 125, 146),
+        // onSecondary: Colors.green,
+        background: Color.fromARGB(255, 59, 99, 88),
+        //surface:  Color.fromARGB(255, 65, 179, 164)
+      ),
+      appBarTheme:
+          const AppBarTheme(backgroundColor: Color.fromARGB(255, 93, 203, 172)),
+      // useMaterial3: true,
+      primaryColor: Colors.black,
+
       textTheme: const TextTheme(
           bodyMedium: TextStyle(color: Colors.white),
           bodyLarge: TextStyle(color: Colors.white),
@@ -35,7 +39,13 @@ class MyTheme {
 }
 
 // light orange   Color.fromARGB(255, 232, 167, 124)
-// dark orange    Color.fromARGB(255, 226, 124, 96)
 // light mint     Color.fromARGB(255, 133, 220, 187)
 // main teal      Color.fromARGB(255, 65, 179, 164)
 // off pink       Color.fromARGB(255, 195, 141, 158)
+
+// new colors
+// main orange    Color.fromARGB(255, 226, 124, 96)
+// teal           Color.fromARGB(255, 93, 203, 172)
+
+// Color.fromARGB(255, 59, 99, 88)
+

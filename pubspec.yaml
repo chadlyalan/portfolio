@@ -87,6 +87,7 @@ flutter:
     - assets/rg-wordmark.svg
     - assets/rock-garden.svg
     - assets/weather.svg
+    - assets/redpoint-demo.mp4
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
