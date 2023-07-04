@@ -58,6 +58,7 @@ class Landing extends ConsumerWidget {
                       }),
                       text: 'Hi',
                       style: plainTitle,
+
                     ),
                   ),
                   Padding(
@@ -84,6 +85,7 @@ class Landing extends ConsumerWidget {
                           text: 'Chad',
                           style: colorTitle,
                           delay: 800,
+
                         )
                       ],
                     ),

@@ -14,7 +14,6 @@ class MyTheme {
           // in order to make the app bar and scaffold match, this
           // surface is totally transparent.
           surface: const Color.fromARGB(0, 0, 0, 0)),
-      //useMaterial3: true,
       primaryColor: Colors.black,
       iconTheme: const IconThemeData(color: Colors.white));
 
@@ -32,6 +31,7 @@ class MyTheme {
           const AppBarTheme(backgroundColor: Color.fromARGB(255, 93, 203, 172)),
       // useMaterial3: true,
       primaryColor: Colors.black,
+
       textTheme: const TextTheme(
           bodyMedium: TextStyle(color: Colors.white),
           bodyLarge: TextStyle(color: Colors.white),
@@ -48,3 +48,4 @@ class MyTheme {
 // teal           Color.fromARGB(255, 93, 203, 172)
 
 // Color.fromARGB(255, 59, 99, 88)
+

@@ -13,6 +13,8 @@ class SidePanel extends ConsumerStatefulWidget {
 class _SidePanelState extends ConsumerState<SidePanel> {
   @override
   Widget build(BuildContext context) {
+    // final theme= ref.read(themeModeProvider);
+
     final scroller = ref.read(scrollControllerProvider);
     return Material(
         color: Theme.of(context).colorScheme.background,
@@ -58,6 +60,7 @@ class _SidePanelState extends ConsumerState<SidePanel> {
                     fontWeight: FontWeight.w500,
                     // color: Theme.of(context).colorScheme.secondary
                   ))),
+
           TextButton(
               onPressed: () {
                 controller.jumpTo(
@@ -83,6 +86,7 @@ class _SidePanelState extends ConsumerState<SidePanel> {
                     fontWeight: FontWeight.w500,
                     // color: Theme.of(context).colorScheme.secondary
                   ))),
+
         ],
       ));
 }
