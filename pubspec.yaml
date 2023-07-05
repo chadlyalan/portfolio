@@ -64,8 +64,6 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - assets/rock_canyon.png
-    - assets/redpoint.png
     - assets/rock_canyon_demo.mkv
     - assets/konbon.svg
     - assets/flutter.svg
