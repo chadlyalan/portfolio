@@ -62,11 +62,17 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
           padding: const EdgeInsets.all(8.0),
           decoration: showHoverColor
               ? BoxDecoration(
-                color: Theme.of(context).colorScheme.secondary.withOpacity(.2),
+                  borderRadius: BorderRadius.circular(15),
+                  color:
+                      Theme.of(context).colorScheme.secondary.withOpacity(.2),
                   border: Border.all(
                       color: Theme.of(context).colorScheme.secondary),
                 )
-              : null,
+              : BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border.all(
+                      color: Theme.of(context).colorScheme.secondary),
+                ),
           child: Row(children: [
             widget.swap == null
                 ? SizedBox(
