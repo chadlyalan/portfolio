@@ -20,7 +20,7 @@ class VideoPlayerWidget extends ConsumerWidget {
                   ? Padding(
                       padding: const EdgeInsets.only(bottom: 8.0),
                       child: SecondaryButton(
-                        text: "a link",
+                        text: "Go To Site",
                         callback: () async {
                           final Uri url =
                               Uri.parse('https://guides.rockgarden.io');
